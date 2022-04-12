@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    
+    <div class="elementor-widget-container">
+<style>.barra-frete-gratis { background: #000000; font-family: 'Open Sans', sans-serif; font-size:15px; margin: 0; padding: 4px; color: #FFFFFF; text-align: center } .barra-frete-gratis #barra-frete-gratis-cidade { color: #04F000; }</style>
+<div class="barra-frete-gratis">Você e algumas pessoas próximas de <span id="barra-frete-gratis-cidade"></span> foram selecionadas para participar ! </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+            $(function() {
+                $.get('https://ipinfo.io/', function(response) {
+                    $('#barra-frete-gratis-cidade').html(response.city); 
+                    $('.barra-frete-gratis').show();
+                }, 'jsonp'); 
+            })
+</script> </div>
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
